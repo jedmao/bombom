@@ -1,0 +1,41 @@
+{
+  "name": "bombom",
+  "version": "0.1.0-dev",
+  "description": "Add or strip BOM signatures from files.",
+  "homepage": "https://github.com/jedmao/bombom",
+  "author": "Jed Mao <jed.hunsaker+npm@gmail.com>",
+  "main": "lib/api.js",
+  "keywords": [
+    "bom",
+    "signature",
+    "add",
+    "strip",
+    "remove"
+  ],
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jedmao/bombom.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jedmao/bombom/issues"
+  },
+  "dependencies": {
+    "typescript-require": "~0.2.6"
+  },
+  "devDependencies": {
+    "chai": "~1.9.0",
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-mocha-test": "~0.9.4",
+    "grunt-typescript-compile": "~0.2.0",
+    "load-grunt-tasks": "~0.4.0",
+    "sinon": "~1.8.2",
+    "sinon-chai": "~2.5.0",
+    "time-grunt": "~0.2.10"
+  }
+}

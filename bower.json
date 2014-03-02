@@ -1,0 +1,33 @@
+{
+  "name": "bombom",
+  "version": "0.1.0-dev",
+  "description": "Add or strip BOM signatures from files.",
+  "homepage": "https://github.com/jedmao/bombom",
+  "authors": [
+    "Jed Mao <jed.hunsaker+npm@gmail.com>"
+  ],
+  "main": "lib/api.js",
+  "keywords": [
+    "bom",
+    "signature",
+    "add",
+    "strip",
+    "remove"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ],
+  "dependencies": {
+    "dt-node": "*"
+  },
+  "devDependencies": {
+    "dt-mocha": "~1.9.0",
+    "dt-sinon": "~1.5.0",
+    "dt-sinon-chai": "~2.4.0"
+  }
+}
