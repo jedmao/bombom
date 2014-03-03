@@ -6,7 +6,8 @@ class Bombom extends Logger {
 
 	register(type: string, signature: number[]) {
 		if (this.isRegistered(type)) {
-			this.warn('BOM type "' + type + '" is already registered and will be overridden');
+			this.warn('BOM type "' + type + '" is already registered' +
+				' and will be overridden');
 		}
 		boms[type] = new Buffer(signature);
 	}
@@ -68,7 +69,9 @@ class Bombom extends Logger {
 		return true;
 	}
 
-	private replaceSignature(buffer: NodeBuffer, oldSig: NodeBuffer, newSig: NodeBuffer) {
+	private replaceSignature(buffer: NodeBuffer, oldSig: NodeBuffer,
+		newSig: NodeBuffer) {
+
 		var result = new Buffer(buffer.length - oldSig.length + newSig.length);
 		newSig.copy(result);
 		buffer.copy(result, newSig.length);
