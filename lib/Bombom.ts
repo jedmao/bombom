@@ -1,29 +1,19 @@
-﻿import events = require('events');
-
-import boms = require('./boms');
+﻿import boms = require('./boms');
 import Logger = require('./Logger');
 
 
-class Bombom extends events.EventEmitter {
-
-	private logger: Logger;
-
-	constructor(logger?: Logger) {
-		super();
-		this.logger = logger || new Logger();
-	}
+class Bombom extends Logger {
 
 	register(type: string, signature: number[]) {
 		if (this.isRegistered(type)) {
-			this.logger.warn('BOM type "' + type + '" is already registered ' +
-				'and will be overridden');
+			this.warn('BOM type "' + type + '" is already registered and will be overridden');
 		}
 		boms[type] = new Buffer(signature);
 	}
 
 	unregister(type: string) {
 		if (!this.isRegistered(type)) {
-			this.logger.warn('No BOM type "' + type + '" to unregister');
+			this.warn('No BOM type "' + type + '" to unregister');
 		} else {
 			delete boms[type];
 		}
@@ -49,7 +39,7 @@ class Bombom extends events.EventEmitter {
 		if (this.isRegistered(type)) {
 			return true;
 		}
-		this.logger.error(new Error('BOM type "' + type + '" is not registered'));
+		this.error(new Error('BOM type "' + type + '" is not registered'));
 		return false;
 	}
 
@@ -78,9 +68,7 @@ class Bombom extends events.EventEmitter {
 		return true;
 	}
 
-	private replaceSignature(buffer: NodeBuffer, oldSig: NodeBuffer,
-		newSig: NodeBuffer) {
-
+	private replaceSignature(buffer: NodeBuffer, oldSig: NodeBuffer, newSig: NodeBuffer) {
 		var result = new Buffer(buffer.length - oldSig.length + newSig.length);
 		newSig.copy(result);
 		buffer.copy(result, newSig.length);
