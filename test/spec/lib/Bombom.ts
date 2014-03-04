@@ -17,7 +17,7 @@ describe('Bombom', () => {
 		bombom.register('foo', []);
 	});
 
-	it('warns when a BOM key will be overridden', done => {
+	it('warns when registering a BOM would override an existing one', done => {
 		bombom.once('warn', () => {
 			done();
 		});
@@ -33,7 +33,7 @@ describe('Bombom', () => {
 		bombom.unregister('foo');
 	});
 
-	it('warns when trying to unregister an unregistered BOM type', () => {
+	it('warns when trying to unregister a BOM type hasn\'t been registered', () => {
 		var onUnregistered = sinon.spy();
 		bombom.register('foo', []);
 		bombom.once('warn', onUnregistered);
