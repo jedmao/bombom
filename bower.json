@@ -1,7 +1,7 @@
 {
   "name": "bombom",
-  "version": "0.1.0-dev",
-  "description": "Add or strip BOM signatures from files.",
+  "version": "0.1.0",
+  "description": "Detect, enforce or strip BOM signatures.",
   "homepage": "https://github.com/jedmao/bombom",
   "authors": [
     "Jed Mao <jed.hunsaker+npm@gmail.com>"
