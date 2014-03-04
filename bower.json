@@ -10,8 +10,10 @@
   "keywords": [
     "bom",
     "signature",
-    "add",
+    "detect",
+    "enforce",
     "strip",
+    "add",
     "remove"
   ],
   "license": "MIT",

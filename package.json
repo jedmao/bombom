@@ -8,8 +8,10 @@
   "keywords": [
     "bom",
     "signature",
-    "add",
+    "detect",
+    "enforce",
     "strip",
+    "add",
     "remove"
   ],
   "scripts": {
